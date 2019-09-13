@@ -2,12 +2,12 @@
 public class User
 	{
 		private String name;
-		private String gender;
+		private int gender;
 		private int weight;
 		private int height;
 		private int age;
 
-		public User(String name, String gender, int weight, int height, int age)
+		public User(String name, int gender, int weight, int height, int age)
 			{
 		this.name=name;
 		this.gender=gender;
@@ -23,11 +23,11 @@ public class User
 				{
 					this.name = name;
 				}
-			public String getGender()
+			public int getGender()
 				{
 					return gender;
 				}
-			public void setGender(String gender)
+			public void setGender(int gender)
 				{
 					this.gender = gender;
 				}
