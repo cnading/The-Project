@@ -1,6 +1,7 @@
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
@@ -19,96 +20,63 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 public class TheProject extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static Scanner userInput = new Scanner(System.in);
 	static User hero;
 	static String name;
-	static JLabel weightLabel = new JLabel(hero.getName() + ", enter your weight:");
-	static JLabel heightLabel = new JLabel(hero.getName() + ", enter your height:");
-	static JLabel ageLabel = new JLabel(hero.getName() + ", enter your height:");
-
-	static JTextField weight = new JTextField(3);
-	static JTextField height = new JTextField(3);
-	static JTextField age = new JTextField(3);
-
+	static int weight;
+	static int age;
+	static int height;
 	static int results = 0;
 	static int gender;
 
+
 	static JFrame frame = new JFrame();
+	
 
 	public static void main(String[] args) {
 		hero = new User("", 0, 0, 0, 0);
-		// greetUser();
-		// getGender();
-		// getInts();
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				new TheProject().setVisible(true);
-			}
-		});
-
+		JPanel();
 	}
 
-	public static void getInts() {
-		System.out.println("Okay, now that we have your name and gender...");
-		System.out.println("How many inches tall are you?");
-		int height = userInput.nextInt();
-		hero.setHeight(height);
-		System.out.println("");
-	}
+	public static void JPanel() {
 
-	public static void TheProject() {
+				name = JOptionPane.showInputDialog("Welcome, what is your name?");
+				hero.setName(name);
+				JOptionPane.showMessageDialog(frame,
+						"Well " + hero.getName()
+								+ " , welcome to my diet writing program. With the answers to the\n following questions"
+								+ " I will write a cutom meal plan for the entire day!");
+				Object[] options =
+					{ "Male", "Female" };
+				gender = JOptionPane.showOptionDialog(frame, "What is your sex?", "Your Sex", JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options[0]);
+				String weightS="";
+				String heightS="";
+				String ageS="";
+				weightS = JOptionPane.showInputDialog("How much do you weigh, in pounds?");
+				weight = Integer.parseInt(weightS);
+				heightS = JOptionPane.showInputDialog("And your height?");
+				height= Integer.parseInt(heightS);
+				ageS = JOptionPane.showInputDialog("And lastly your age?");
+				age= Integer.parseInt(ageS);
+				hero.setAge(age);
+				hero.setHeight(height);
+				hero.setAge(weight);
+				Object[] goAgain =
+							{ "Yes", "No" };
+						gender = JOptionPane.showOptionDialog(frame, name + ", please confirm the following information is correct!\n"
+								+ "You weigh " + weight + " pounds\n"
+								+ "Are " + height + "inches tall" +
+								"and " + age + " years young",
+								"Your Sex", JOptionPane.YES_NO_CANCEL_OPTION,
+								JOptionPane.QUESTION_MESSAGE,
+								null, options, options[0]);
 
-//				name = JOptionPane.showInputDialog("Welcome, what is your name?");
-//				hero.setName(name);
-//				JOptionPane.showMessageDialog(frame,
-//						"Well " + hero.getName()
-//								+ " , welcome to my diet writing program. With the answers to the\n following questions"
-//								+ " I will write a cutom meal plan for the entire day!");
-//				Object[] options =
-//					{ "Male", "Female" };
-//				gender = JOptionPane.showOptionDialog(frame, "What is your sex?", "Your Sex",
-		weight.setText("0");
-		height.setText("0");
-		age.setText("0");
-		JPanel newPanel = new JPanel(new GridBagLayout());
-		GridBagConstraints constraints = new GridBagConstraints();
-		constraints.anchor = GridBagConstraints.WEST;
-		constraints.insets = new Insets(10, 10, 10, 10);
-
-		constraints.gridx = 0;
-		constraints.gridy = 0;
-
-		newPanel.add(weightLabel, constraints);
-		constraints.gridx = 1;
-		newPanel.add(weight, constraints);
-
-		constraints.gridx = 0;
-		constraints.gridy = 1;
-
-		newPanel.add(heightLabel, constraints);
-		constraints.gridx = 1;
-		newPanel.add(height, constraints);
-
-		constraints.gridx = 0;
-		constraints.gridy = 2;
-
-		newPanel.add(ageLabel, constraints);
-		constraints.gridx = 1;
-		newPanel.add(age, constraints);
-
-		newPanel.setBorder(
-				BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Getting Your Digits!"));
-
-		add(newPanel);
-
-		pack();
-
-		setLocationRelativeTo(null);
 
 	}
 }
