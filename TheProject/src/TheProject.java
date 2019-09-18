@@ -71,8 +71,8 @@ public class TheProject extends JFrame {
 							{ "Yes", "No" };
 						gender = JOptionPane.showOptionDialog(frame, name + ", please confirm the following information is correct!\n"
 								+ "You weigh " + weight + " pounds\n"
-								+ "Are " + height + "inches tall" +
-								"and " + age + " years young",
+								+ "Are " + height + " inches tall" +
+								" and are " + age + " years young",
 								"Your Sex", JOptionPane.YES_NO_CANCEL_OPTION,
 								JOptionPane.QUESTION_MESSAGE,
 								null, options, options[0]);
