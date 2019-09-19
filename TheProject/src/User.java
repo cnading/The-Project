@@ -2,14 +2,16 @@
 public class User
 	{
 		private String name;
+		private String goal;
 		private int gender;
 		private int weight;
 		private int height;
 		private int age;
 
-		public User(String name, int gender, int weight, int height, int age)
+		public User(String name, String goal, int gender, int weight, int height, int age)
 			{
 		this.name=name;
+		this.setGoal(goal);
 		this.gender=gender;
 		this.weight=weight;
 		this.height=height;
@@ -54,6 +56,14 @@ public class User
 			public void setAge(int age)
 				{
 					this.age = age;
+				}
+			public String getGoal()
+				{
+						return goal;
+				}
+			public void setGoal(String goal)
+				{
+						this.goal = goal;
 				}
 			
 			
