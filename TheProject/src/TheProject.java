@@ -41,6 +41,7 @@ public class TheProject extends JFrame
 		static int gender;
 		static int goAgain;
 		static int calories= 0;
+		static int totalCalories;
 		static String goal;
 		static String adventureType;
 
@@ -76,21 +77,21 @@ public class TheProject extends JFrame
 				String weightS = "";
 				String heightS = "";
 				String ageS = "";
-				weightS = JOptionPane.showInputDialog("How much do you weigh, in pounds?");
+				weightS = JOptionPane.showInputDialog("How much do you weigh, in kg?");
 				weight = Integer.parseInt(weightS);
-				heightS = JOptionPane.showInputDialog("And your height, in inches?");
+				heightS = JOptionPane.showInputDialog("And your height, in cm?");
 				height = Integer.parseInt(heightS);
 				ageS = JOptionPane.showInputDialog("And lastly your age?");
 				age = Integer.parseInt(ageS);
 				hero.setAge(age);
 				hero.setHeight(height);
-				hero.setAge(weight);
+				hero.setWeight(weight);
 				Object[] choices =
 					{ "Yes", "No" };
 				goAgain = JOptionPane.showOptionDialog(frame,
-						name + ", please confirm the following information is correct!\n" + "You weigh " + weight
-								+ " pounds\n" + "Are " + height + " inches tall" + " and are " + age + " years young",
-						"Your Sex", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, choices,
+						name + ", please confirm the following information is correct!\n" + "You weigh " + hero.getWeight()
+								+ " pounds\n" + "Are " + hero.getHeight() + " inches tall" + " and are " + hero.getAge() + " years young",
+						"Last Chance", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, choices,
 						choices[0]);
 				if (goAgain == 0)
 					{
@@ -104,38 +105,20 @@ public class TheProject extends JFrame
 			}
 
 		public static void calculations()
-			{
-				if (gender== 0)
-					{
-						System.out.println("Male");
+			{ 
+				if (gender==0){
+				totalCalories= (int) (hero.getWeight() * 10 + 6.25* hero.getHeight() - 5* hero.getAge()+5);
+				
+				
+				JOptionPane.showMessageDialog(frame,
+						"Well " + hero.getName() + ", You need to eat " + totalCalories + " calories to maintain your weight");
+				}
+				else if (gender==1){
+					totalCalories= (int) (hero.getWeight() * 10 + 6.25* hero.getHeight() - 5* hero.getAge()-161);
+					JOptionPane.showMessageDialog(frame,
+							"Well " + hero.getName() + ", You need to eat " + totalCalories + " calories to to maintain your weight");
 					}
-				else if (gender==1)
-					{
-						System.out.println("Female");
-					}
-				switch (goal)
-					{
-					case "Gain Muscle and Fat":
-						calories= calories+50;
-						break;
-
-					case "Gain Muscle":
-						System.out.println("");
-						break;
-
-					case "Keep Fit":
-						System.out.println("");
-						break;
-
-					case "Lose Fat":
-						System.out.println("");
-						break;
-
-					case "Lose Fat and Muscle":
-						System.out.println("");
-						break;
-					}
-
+				
 			}
 
 		public static void displayMealPlan()
