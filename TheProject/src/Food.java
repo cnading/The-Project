@@ -1,27 +1,20 @@
 
 public class Food
 	{
-
 		private String type;
+		private String name;
 		private int calories;
 		private boolean desire;
+
+		public Food(String t, String n,  int c, boolean d)
+			{
+				
+				type= t;
+				name = n;
+				calories = c;
+				desire = d;
+			}
 		
-		public Food (String t, int c, boolean d )
-		{
-			type= t;
-			calories= c;
-			desire= d;
-		}
-
-		public String getType()
-			{
-				return type;
-			}
-
-		public void setType(String type)
-			{
-				this.type = type;
-			}
 
 		public int getCalories()
 			{
@@ -44,5 +37,27 @@ public class Food
 			}
 
 
+		public String getName()
+			{
+					return name;
+			}
+
+
+		public void setName(String name)
+			{
+					this.name = name;
+			}
+
+
+		public String getType()
+			{
+					return type;
+			}
+
+
+		public void setType(String type)
+			{
+					this.type = type;
+			}
 
 	}
