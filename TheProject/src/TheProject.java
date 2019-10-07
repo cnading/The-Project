@@ -107,7 +107,7 @@ public class TheProject extends JFrame
 		public static void calculations()
 			{ 
 				if (gender==0){
-				totalCalories= (int) (hero.getWeight() * 10 + 6.25* hero.getHeight() - 5* hero.getAge()+5);
+				totalCalories= (int) ((hero.getWeight() * 10) + (6.25* hero.getHeight()) - (5* hero.getAge()) +5);
 				
 				
 				JOptionPane.showMessageDialog(frame,
