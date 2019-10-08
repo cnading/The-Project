@@ -6,31 +6,30 @@ public class Protein
 
 		public static void loadProtein()
 			{
-				//One fruit without refuse, or one cup
+				//Per 100 grams
 				//numbers from USDA
-				//FRUIT
-				protein.add(new Food ("Fruit" , "Strawberries" , 49, true));
-				protein.add(new Food ("Fruit" , "Blueberries" , 85, true));
-				protein.add(new Food ("Fruit" , "Rasberries" , 65, true));
-				protein.add(new Food ("Fruit" , "Blackberry" , 62, true));
-				protein.add(new Food ("Fruit" , "Apple" , 95, true));
-				protein.add(new Food ("Fruit" , "Orange" , 62, true));
-				protein.add(new Food ("Fruit" , "Grapes" , 62, true));
-				protein.add(new Food ("Fruit" , "Pineapple" , 83, true));
-				protein.add(new Food ("Fruit" , "Peach" , 150, true));
-				protein.add(new Food ("Fruit" , "Banana" , 105, true));
-				protein.add(new Food ("Fruit" , "Mango" , 201, true));
-				
-				// 1 oz
-				protein.add(new Food ("Snack", "Dark Chocolate", 155, true));
-				protein.add(new Food ("Snack", "Cliff Bar", 260, true));
-				protein.add(new Food ("Snack", "Chia Seeds", 138, true));
-				protein.add(new Food ("Snack", "Chobani Yogurt", 120, true));
+				//MEATS
+				protein.add(new Food ("Meat" , "Grilled Steak" , 176, true));
+				protein.add(new Food ("Meat" , "Chicken breast" , 165, true));
+				protein.add(new Food ("Meat" , "Cooked Coho Salmon" , 178, true));
+				protein.add(new Food ("Meat" , "Tuna" , 130, true));
+				protein.add(new Food ("Meat" , "Lean Ground Beef" , 230, true));
+				protein.add(new Food ("Meat" , "Bacon" , 541, true));
+				protein.add(new Food ("Meat" , "Ham" , 110, true));
+				protein.add(new Food ("Meat" , "Turkey" , 150, true));
+				protein.add(new Food ("Meat" , "Pork Tenderloin" , 150, true));
 				
 				
-				protein.add(new Food ("Drink", "Apple Juice", 180, true));
-				protein.add(new Food ("Drink", "Chocolate Milk", 210, true));
-				protein.add(new Food ("Drink", "Orange Juice", 111, true ));
+				protein.add(new Food ("Super" , "Tofu" , 100, false));
+				protein.add(new Food ("Super", "Eggs", 143, true));
+				protein.add(new Food ("Super", "Black Beans", 132, true));
+				protein.add(new Food ("Super", "Pinto Beans", 245, true));
+				protein.add(new Food ("Super", "Peanut Butter", 600, true));
+
+
+				protein.add(new Food ("Shake", "Shake 1", 180, true));
+				protein.add(new Food ("Shake", "Chocolate Milk", 210, true));
+				protein.add(new Food ("Shake", "Orange Juice", 111, true ));
 
 			}
 	}
