@@ -67,7 +67,7 @@ public class TheProject extends JFrame
 				final String[] type =
 					{ "Gain Muscle and Fat", "Gain Muscle", "Keep Fit", "Lose Fat", "Lose Fat and Muscle" };
 				final JFrame frame = new JFrame();
-				String goal = (String) JOptionPane.showInputDialog(frame, "What are your weight goals?", "Goal",
+				goal = (String) JOptionPane.showInputDialog(frame, "What are your weight goals?", "Goal",
 						JOptionPane.QUESTION_MESSAGE, null, type, type[0]);
 
 				Object[] options =
@@ -105,11 +105,32 @@ public class TheProject extends JFrame
 			}
 
 		public static void calculations()
-			{ 
+			{  //2845
 				if (gender==0){
-				totalCalories= (int) ((hero.getWeight() * 10) + (6.25* hero.getHeight()) - (5* hero.getAge()) +5);
-				
-				
+				totalCalories= (int) ((hero.getWeight() * 10) + ((6.25* hero.getHeight()) - (5* hero.getAge())) +5);
+					if(goal.equals("Gain Muscle and Fat"))
+						{
+							totalCalories=totalCalories + 1000;
+						}
+					else if (goal.equals("Gain Muscle"))
+						{
+							totalCalories=totalCalories + 500;
+
+						}
+					else if (goal.equals("Lose Fat"))
+						{
+							totalCalories=totalCalories - 500;
+
+						}
+					else if (goal.equals("Lose Fat and Muscle"))
+						{
+							totalCalories=totalCalories - 1000;
+
+						}
+					else
+						{
+							getInfo();
+						}
 				JOptionPane.showMessageDialog(frame,
 						"Well " + hero.getName() + ", You need to eat " + totalCalories + " calories to maintain your weight");
 				}

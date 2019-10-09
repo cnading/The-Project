@@ -16,10 +16,6 @@ public class Fats
 				fats.add(new Food ("Super" , "Olives" , 95, true));
 				fats.add(new Food ("Super" , "Olive Oil" , 62, true));
 				fats.add(new Food ("Super" , "Edamame" , 62, true));
-				fats.add(new Food ("Super" , "Pineapple" , 83, true));
-				fats.add(new Food ("Super" , "Peach" , 150, true));
-				fats.add(new Food ("Super" , "Banana" , 105, true));
-				fats.add(new Food ("Super" , "Mango" , 201, true));
 				
 				// 1 oz
 				fats.add(new Food ("Snack", "Dark Chocolate", 155, true));
@@ -33,7 +29,11 @@ public class Fats
 				fats.add(new Food ("Nuts", "Cashews", 157, true));
 				fats.add(new Food ("Nuts" , "Sunflower Seeds" , 166, false));
 				
-				
+				fats.add(new Food ("Sauce" , "Ranch" , 145, false));
+				fats.add(new Food ("Sauce" , "Ketchup" , 30, false));
+				fats.add(new Food ("Sauce" , "Mayonnaise" , 210, false));
+
+			
 				fats.add(new Food ("Drink", "Apple Juice", 180, true));
 				fats.add(new Food ("Drink", "Chocolate Milk", 210, true));
 				fats.add(new Food ("Drink", "Orange Juice", 111, true ));
