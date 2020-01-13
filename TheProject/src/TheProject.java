@@ -151,7 +151,6 @@ public class TheProject extends JFrame
 					totalCalories= totalCalories + caloriesBurned;
 					break;
 				default:
-					
 					getInfo();
 				}
 				
@@ -201,7 +200,7 @@ public class TheProject extends JFrame
 		public static void displayMealPlan()
 			{
 				if (totalCalories > 2500){
-					
+					JOptionPane.showMessageDialog(frame, hero.getName() + ", calculating your calories...");
 				}
 				
 			}
